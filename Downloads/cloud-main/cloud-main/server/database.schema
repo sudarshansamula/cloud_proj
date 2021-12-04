@@ -1,0 +1,66 @@
+PRODUCTS
++----------------------+--------------+------+-----+---------+-------+
+| Field                | Type         | Null | Key | Default | Extra |
++----------------------+--------------+------+-----+---------+-------+
+| PRODUCT_NUM          | varchar(100) | NO   | PRI | NULL    |       |
+| DEPARTMENT           | varchar(100) | YES  |     | NULL    |       |
+| COMMODITY            | varchar(100) | YES  |     | NULL    |       |
+| BRAND_TY             | varchar(100) | YES  |     | NULL    |       |
+| NATURAL_ORGANIC_FLAG | varchar(100) | YES  |     | NULL    |       |
++----------------------+--------------+------+-----+---------+-------+
+HOUSEHOLDS
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| HSHD_NUM         | varchar(255) | NO   | PRI | NULL    |       |
+| L                | varchar(255) | YES  |     | NULL    |       |
+| AGE_RANGE        | varchar(255) | YES  |     | NULL    |       |
+| MARITAL          | varchar(255) | YES  |     | NULL    |       |
+| INCOME_RANGE     | varchar(255) | YES  |     | NULL    |       |
+| HOMEOWNER        | varchar(255) | YES  |     | NULL    |       |
+| HSHD_COMPOSITION | varchar(255) | YES  |     | NULL    |       |
+| HH_SIZE          | varchar(255) | YES  |     | NULL    |       |
+| CHILDREN         | varchar(255) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+TRANSACTIONS
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| BASKET_NUM    | varchar(100) | YES  |     | NULL    |       |
+| HSHD_NUM      | varchar(100) | YES  |     | NULL    |       |
+| PURCHASE_DATE | varchar(100) | YES  |     | NULL    |       |
+| PRODUCT_NUM   | varchar(100) | NO   |     | NULL    |       |
+| SPEND         | varchar(100) | YES  |     | NULL    |       |
+| UNITS         | varchar(100) | YES  |     | NULL    |       |
+| STORE_R       | varchar(100) | YES  |     | NULL    |       |
+| WEEK_NUM      | varchar(100) | YES  |     | NULL    |       |
+| YEAR          | varchar(100) | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+
+To find data about a household we have to join all the tables.
+To avoid such a costly operation, I have created a new table with all the combined output.
+
+COMBINED_OUTPUT_OF_3_TABLES
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| HSHD_NUM         | varchar(255) | YES  |     | NULL    |       |
+| BASKET_NUM       | varchar(100) | YES  |     | NULL    |       |
+| PURCHASE         | varchar(100) | YES  |     | NULL    |       |
+| PRODUCT_NUM      | varchar(100) | YES  |     | NULL    |       |
+| DEPARTMENT       | varchar(100) | YES  |     | NULL    |       |
+| COMMODITY        | varchar(100) | YES  |     | NULL    |       |
+| SPEND            | varchar(100) | YES  |     | NULL    |       |
+| UNITS            | varchar(100) | YES  |     | NULL    |       |
+| STORE_R          | varchar(100) | YES  |     | NULL    |       |
+| WEEK_NUM         | varchar(100) | YES  |     | NULL    |       |
+| YEAR             | varchar(100) | YES  |     | NULL    |       |
+| L                | varchar(255) | YES  |     | NULL    |       |
+| AGE_RANGE        | varchar(255) | YES  |     | NULL    |       |
+| MARITAL          | varchar(255) | YES  |     | NULL    |       |
+| INCOME_RANGE     | varchar(255) | YES  |     | NULL    |       |
+| Homeowner        | varchar(255) | YES  |     | NULL    |       |
+| HSHD_COMPOSITION | varchar(255) | YES  |     | NULL    |       |
+| HH_SIZE          | varchar(255) | YES  |     | NULL    |       |
+| CHILDREN         | varchar(255) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
